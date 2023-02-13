@@ -1,3 +1,6 @@
+#browseBt {
+  float: right;
+}
 .btn {
   border-width: 2px;
 }
@@ -683,8 +686,9 @@ a {
   transition: color 0.6s;
 }
 .cid-tcU3ENaE0I {
-  background-image: url("../../../assets/images/marvel-vs-dc-android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-qdglk-2000x992.jpeg");
+  background-image: url("../../../assets/images/1.jpeg"); 
 }
+
 .cid-tcU3ENaE0I .mbr-fallback-image.disabled {
   display: none;
 }
@@ -748,7 +752,7 @@ a {
 .cid-tcU3ENaE0I .mbr-text,
 .cid-tcU3ENaE0I .mbr-section-btn {
   text-align: center;
-  color: #f2762e;
+  color: #ffffff;
 }
 .cid-tq6q29SoI4 {
   padding-top: 6rem;
@@ -1566,5 +1570,48 @@ a {
   font-size: 2rem;
   width: 1.6rem;
 }
-#frontcardscolor * {color: rgb(242, 118, 46);cursor:pointer;}
-#frontcardscolor:hover * {color: #faa479;}
+#frontcardscolor * {color: rgb(255, 255, 255);cursor:pointer;}
+#frontcardscolor:hover * {color: #f57b00;}
+.rounded{
+  border-radius: 7px;
+  overflow: hidden;
+}
+.border{
+  border-left: 6px solid blue;
+  background: lightgray;
+}
+
+.example-parent {
+  border: 2px solid #DFA612;
+  color: black;
+  display: flex;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.example-origin {
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.example-draggable {
+  background-color: #4AAE9B;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.example-dropzone {
+  background-color: #6DB65B;
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.gray-out {
+  filter: grayscale(100%);
+  opacity: 0.5;
+  pointer-events: none;
+}

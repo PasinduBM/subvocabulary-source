@@ -45,11 +45,36 @@
     </noscript>
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-    <link rel="assets/stylesheet" href="css/bootstrap.min.css" />
-    
-    <script src="assets/js/custom-page1.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/custom-page1.css">
 
+<script>
+    
+function onDragStart(event) {
+    event
+      .dataTransfer
+      .setData('text/plain', event.target.id);
+  
+    event
+      .currentTarget
+      .style
+      .backgroundColor = 'yellow';
+  }
+
+  function onDragOver(event) {
+    event.preventDefault();
+  }
+
+  function onDrop(event) {
+    const id = event
+      .dataTransfer
+      .getData('text');
+      const draggableElement = document.getElementById(id);
+      const dropzone = event.target;
+      dropzone.appendChild(draggableElement);
+      event
+    .dataTransfer
+    .clearData();
+  }
+</script>
 
 
 </head>
@@ -105,8 +130,9 @@
                                 <strong>This is your Vocabulary Book</strong>
                             </h6>
                             <p class="mbr-text mbr-fonts-style mb-4 display-4">
-                                Sub Vocabulary provides you with a cool dictrionary note. You can add words, give
-                                 meanings and arrange the way it suits you</p>
+                                Themes in the Mobirise website builder offer multiple blocks: intros, sliders,
+                                galleries, forms, articles, and so on. Start a project and click on the red plus buttons
+                                to see the blocks available for your theme.</p>
                             <div class="mbr-section-btn mt-3">
                                 <a class="btn btn-warning display-4" href="https://mobiri.se">Learn more</a>
                             </div>
@@ -124,31 +150,115 @@
 
     <section data-bs-version="5.1" class="" id="tabs1-l">
 
-        <div class="container-fluid">
-            <div class="row">
-              <div class="col-12 col-md-6">
-                <h3 style="text-align: center;">Learning</h3>
-                <div class="column" id="column-1">
-                  <!-- Content for Column 1 -->
+        <div class="container rounded">
+            <div class=" row-fluid justify-content-center">
+                <div class="example-parent">
+                    
+                    <div class="example-origin">
+                        To-do
+                        <div id="draggable-1" class="example-draggable" draggable="true"
+                            ondragstart="onDragStart(event);">
+                            thing 1
+                        </div>
+                        <div id="draggable-2" class="example-draggable" draggable="true"
+                            ondragstart="onDragStart(event);">
+                            thing 2
+                        </div>
+                        <div id="draggable-3" class="example-draggable" draggable="true"
+                            ondragstart="onDragStart(event);">
+                            thing 3
+                        </div>
+                        <div id="draggable-4" class="example-draggable" draggable="true"
+                            ondragstart="onDragStart(event);">
+                            thing 4
+                        </div>
+                    </div>
+
+                    <div class="example-dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+                        Done
+                    </div>
                 </div>
-              </div>
-              <div class="col-12 col-md-6">
-                <h3 style="text-align: center;">New</h3>
-                <div class="column" id="column-2">
-                  <!-- Content for Column 2 -->
-                </div>
-              </div>
             </div>
-            <hr class="hr" />
-            <div class="row">
-              <h3 style="text-align: center;">Know</h3>
-              <div class="col-12">
-                <div class="column" id="column-3">
-                  <!-- Content for Column 3 -->
+            <div class="row justify-content-center mt-4">
+                <div class="col-12 col-md-8">
+                    <ul class="nav nav-tabs mb-4" role="tablist">
+                        <li class="nav-item first mbr-fonts-style">
+                            <a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab"
+                                data-bs-toggle="tab" href="#tab1" aria-selected="true">
+                                <strong>Programming</strong>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mbr-fonts-style display-7" role="tab" data-toggle="tab"
+                                data-bs-toggle="tab" href="#tab2" aria-selected="true">
+                                <strong>Research</strong>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link mbr-fonts-style active display-7" role="tab"
+                                data-toggle="tab" data-bs-toggle="tab" href="#tabs1-l_tab2" aria-selected="true">
+                                <strong>Development</strong>
+                            </a></li>
+                        <li class="nav-item"><a class="nav-link mbr-fonts-style active display-7" role="tab"
+                                data-toggle="tab" data-bs-toggle="tab" href="#tabs1-l_tab3" aria-selected="true">
+                                <strong>Phases</strong>
+                            </a></li>
+
+
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab1" class="tab-pane in active" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="mbr-text mbr-fonts-style display-7">
+                                        Mobirise is a free offline app for Windows and Mac to easily create small/medium
+                                        websites, landing pages, online resumes and portfolios. 3100+ beautiful website
+                                        blocks, templates and themes help you to start easily.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab2" class="tab-pane" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="mbr-text mbr-fonts-style display-7">
+                                        Mobile web traffic overtook desktop one in 2016 and will only grow, and that's
+                                        why
+                                        it's important to create websites that look good on all devices. No special
+                                        actions
+                                        required, all sites you make with the Builder are mobile-friendly. You don't
+                                        have to
+                                        create a special mobile version of your website, it will adapt automagically.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab3" class="tab-pane" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="mbr-text mbr-fonts-style display-7">
+                                        Mobirise is an easy and simple free website builder - just drop site elements to
+                                        your page, add content and style it to look the way you like.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab4" class="tab-pane" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="mbr-text mbr-fonts-style display-7">
+                                        Free Website Builder offers a huge collection of 2500+ website blocks, templates
+                                        and
+                                        themes with thousands flexible options. Combine blocks from different themes to
+                                        create a unique mix.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
     </section>
 
     <section data-bs-version="5.1" class="content14 cid-tdaCol1yxU" id="content14-8">
