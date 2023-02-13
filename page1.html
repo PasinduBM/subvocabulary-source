@@ -46,7 +46,8 @@
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="assets/stylesheet" href="css/bootstrap.min.css" />
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
     <script src="assets/js/custom-page1.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/custom-page1.css">
 
@@ -64,7 +65,7 @@
                 <div class="navbar-brand">
 
                     <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-7"
-                            href="https://mobiri.se">Mobirise</a></span>
+                            href="./index.html">SubVoc</a></span>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
                     data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
@@ -106,9 +107,9 @@
                             </h6>
                             <p class="mbr-text mbr-fonts-style mb-4 display-4">
                                 Sub Vocabulary provides you with a cool dictrionary note. You can add words, give
-                                 meanings and arrange the way it suits you</p>
+                                 meanings and arrange the way it suits you. Drag and drop the words to coluns and to your memory</p>
                             <div class="mbr-section-btn mt-3">
-                                <a class="btn btn-warning display-4" href="https://mobiri.se">Learn more</a>
+                                <a onclick="goScrolling()" class="btn btn-warning display-4" >Go Vocabulary</a>
                             </div>
                         </div>
                     </div>
@@ -116,13 +117,14 @@
                         <div class="image-wrapper">
                             <img src="assets/images/sq2.jpg" alt="Mobirise Website Builder">
                         </div>
+                        <div id = "lableHedings" ></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section data-bs-version="5.1" class="" id="tabs1-l">
+    <section  data-bs-version="5.1" class="" id="tabs1-l">
 
         <div class="container-fluid">
             <div class="row">
@@ -139,7 +141,14 @@
                 </div>
               </div>
             </div>
-            <hr class="hr" />
+            <br>
+            <div class="text-center my-3">
+                <button id="saveButton" type="button" onclick="saveState()" class="btn btn-warning mx-auto d-flex flex-column align-items-center" style="line-height: 1; min-height: 2.5rem;">
+                    <i class="fas fa-save fa-lg"></i>
+                    <div class="mt-2">Save</div>
+                  </button>
+                  
+            <br>
             <div class="row">
               <h3 style="text-align: center;">Know</h3>
               <div class="col-12">
@@ -152,11 +161,6 @@
     </section>
 
     <section data-bs-version="5.1" class="content14 cid-tdaCol1yxU" id="content14-8">
-
-
-
-
-
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-10">

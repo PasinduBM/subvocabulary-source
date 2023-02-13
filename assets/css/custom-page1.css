@@ -53,3 +53,6 @@
     cursor: pointer;
   }
   
+  #lableHedings {
+    transition: all 1s ease-in-out;
+  }

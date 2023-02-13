@@ -223,7 +223,9 @@ function findWords(file) {
 
     console.log("Remove Word List: \n" + removeWordList);
     
-    fr.readAsText(file); console.log(wordArray);
+    fr.readAsText(file); 
+    console.log(wordArray);
+    window.location.href = './page1.html';
     } else {
         alert("Subtitle file is empty");
     }
