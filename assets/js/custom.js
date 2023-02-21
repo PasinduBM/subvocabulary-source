@@ -95,47 +95,48 @@ function handleFileUpload(files, obj) {
         status.setFileNameSize(files[i].name, files[i].size);
     }
 }
-$(document).ready(function () {
-    var obj = $('#draganddrophandler');
-    obj.on('dragenter', function (e) {
-        e.stopPropagation();
-        e.preventDefault();
-        $(this).css('border', '2px solid #0B85A1');
-    });
-    obj.on('dragover', function (e) {
-        e.stopPropagation();
-        e.preventDefault();
-    });
-    obj.on('drop', function (e) {
-        $(this).css('border', '2px dotted #B85A1');
-        e.preventDefault();
-        var files = e.originalEvent.dataTransfer.files;
 
+
+
+window.addEventListener('load', function() {
+    var obj = document.getElementById('draganddrophandler');
+    obj.addEventListener('dragenter', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        obj.classList.add('dragover');
+    });
+    obj.addEventListener('drop', function(e) {
+        obj.classList.remove('dragover');
+        e.preventDefault();
+        var files = e.dataTransfer.files;
         handleFileUpload(files, obj);
     });
-    $(document).on('dragenter', function (e) {
+
+    document.addEventListener('dragover', function(e) {
         e.stopPropagation();
         e.preventDefault();
+        obj.classList.add('dragover');
     });
-    $(document).on('dragover', function (e) {
+    document.addEventListener('dragleave', function(e) {
         e.stopPropagation();
         e.preventDefault();
-        obj.css('border', '2px dotted #B85A1');
-    });
-    $(document).on('drag', function (e) {
-        e.stopPropagation();
-        e.preventDefault();
+        obj.classList.remove('dragover');
     });
 });
+
+
 let images = ['assets/images/1.jpeg', 'assets/images/2.jpg', 'assets/images/3.jpeg'];
 
 let index = 0;
 const imgElement = document.querySelector('#mainPhoto');
 
 function change() {
-    document.getElementById('backback').style.backgroundImage = 'url("' + images[index] + '")';
+    const backbackElement = document.getElementById('backback');
+    backbackElement.style.transition = 'background-image 1s ease-in-out';
+    backbackElement.style.backgroundImage = 'url("' + images[index] + '")';
     index > 1 ? index = 0 : index++;
 }
+
 
 window.onload = function () {
     setInterval(change, 5000);

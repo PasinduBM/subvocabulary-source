@@ -228,9 +228,16 @@ body {
 }
 .btn-danger,
 .btn-danger:active {
-  background-color: #802602 !important;
-  border-color: #802602 !important;
-  color: #ffffff !important;
+  background-color: #ffe161 !important;
+  border-color: #ffe161 !important;
+  color: #614f00 !important;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.btn-danger2,
+.btn-danger2:active {
+  background-color: #ffa761 !important;
+  border-color: #ffa761 !important;
+  color: #a81903 !important;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 .btn-danger:hover,
@@ -238,8 +245,18 @@ body {
 .btn-danger.focus,
 .btn-danger.active {
   color: #ffffff !important;
-  background-color: #ff5f0f !important;
-  border-color: #ff5f0f !important;
+  background-color: #ffc107 !important;
+  border-color: #ffc107 !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-danger2:hover,
+.btn-danger2:focus,
+.btn-danger2.focus,
+.btn-danger2.active {
+  color: #ffffff !important;
+  background-color: #f58f8f !important;
+  border-color: #f58f8f !important;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .btn-danger.disabled,
@@ -449,9 +466,9 @@ body {
 .btn-white-outline:focus,
 .btn-white-outline.focus,
 .btn-white-outline.active {
-  color: #cfcfcf !important;
+  color: #f2762e !important;
   background-color: transparent!important;
-  border-color: #cfcfcf !important;
+  border-color: #f2762e !important;
   box-shadow: none!important;
 }
 .btn-white-outline.disabled,
@@ -757,10 +774,10 @@ a {
 .cid-tq6q29SoI4 {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-color: #bfb375;
+  background-color: #ffffff;
 }
 .cid-tq6q29SoI4 .content-wrapper {
-  background: #f2762e;
+  background: #fafafa;
 }
 @media (max-width: 991px) {
   .cid-tq6q29SoI4 .content-wrapper .row {
@@ -1614,4 +1631,78 @@ a {
   filter: grayscale(100%);
   opacity: 0.5;
   pointer-events: none;
+}
+
+#uploadCard {
+  background-color: #f5f5f5; /* sets the background color */
+  color: #333; /* sets the text color */
+  border-radius: 10px; /* adds round corners */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* adds shadows */
+}
+
+#draganddrophandler {
+  border: 2px dashed #ccc; /* sets the border style and color */
+  border-radius: 10px; /* adds round corners */
+  padding: 20px; /* adds some padding inside the border */
+}
+
+.mbr-fonts-style {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* sets the font family */
+  font-size: 20px; /* sets the font size */
+  font-weight: normal; /* sets the font weight */
+  line-height: 1.5; /* sets the line height */
+  letter-spacing: normal; /* sets the letter spacing */
+  color: #333; /* sets the text color */
+}
+
+.card-title.display-2 strong {
+  font-size: 24px; /* sets the font size */
+  font-weight: bold; /* sets the font weight */
+}
+
+.mbr-section-title.display-5 strong {
+  font-size: 20px; /* sets the font size */
+  font-weight: bold; /* sets the font weight */
+}
+
+.site-title {
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  font-size: 5rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #0077c2;
+}
+
+#draganddrophandler:hover, #draganddrophandler.dragover {
+  border: 2px solid #3f51b5; /* border style on hover */
+  box-shadow: 0px 0px 10px 0px rgba(63,81,181,0.5); /* optional box shadow on hover */
+}
+
+#backback {
+  
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#backback::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px; /* Change this value to adjust the height of the fade */
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+#siteDescriptionsiteDescription {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.mbr-iconfont.mbrib-search {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.btn.btn-white-outline.display-4 {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
