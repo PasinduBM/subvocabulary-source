@@ -1,11 +1,14 @@
 var learningList = [];
 var newList = [];
 var knowList = [];
-var dictonery = {};
+var dictionary = {
+  'BB':'double second letters'
+};
 var saveButton;
 var previousLearningList = [...learningList];
 var previousNewList = [...newList];
 var previousKnowList = [...knowList];
+var tooltip;
 
 {
 
@@ -30,46 +33,17 @@ var previousKnowList = [...knowList];
       switch (index) {
         case 0:
           learningList.forEach(card => {
-            const chip = document.createElement('div');
-            chip.setAttribute('id', card.concat('-', '1'));
-            chip.classList.add('card');
-            chip.setAttribute('draggable', true);
-            chip.textContent = card;
-            const close = document.createElement('span');
-            close.classList.add('close');
-            chip.appendChild(close);
-            chip.addEventListener('dragstart', dragStart);
-            column.appendChild(chip);
+            createChip(card, column,'1');
           });
           break;
         case 1:
           newList.forEach(card => {
-            const chip = document.createElement('div');
-            chip.setAttribute('id', card.concat('-', '2'));
-            chip.classList.add('card');
-            chip.setAttribute('draggable', true);
-            chip.textContent = card;
-            const close = document.createElement('span');
-            close.classList.add('close');
-            chip.appendChild(close);
-            chip.addEventListener('dragstart', dragStart);
-            column.appendChild(chip);
+            createChip(card, column,'2');
           });
           break;
         case 2:
           knowList.forEach(card => {
-            const chip = document.createElement('div');
-            chip.addEventListener('click',() => openDialog(card));
-            chip.setAttribute('id', card.concat('-', '3'));
-            chip.classList.add('card');
-            chip.setAttribute('draggable', true);
-            chip.textContent = card;
-            const close = document.createElement('span');
-            close.classList.add('close');
-            close.addEventListener('click',(event)=>removeChip(event));
-            chip.appendChild(close);
-            chip.addEventListener('dragstart', dragStart);
-            column.appendChild(chip);
+            createChip(card, column,'3');
           });
           break;
       }
@@ -79,7 +53,7 @@ var previousKnowList = [...knowList];
     });
     //========================================================//
     
-    
+    //========================================================//
     const closeDialogButton = document.getElementById('close-dialog-button');
     const dialogContainer = document.getElementById('dialog-container');
     const dialogOverlay = document.getElementById('dialog-overlay');
@@ -121,7 +95,7 @@ var previousKnowList = [...knowList];
     const dialogContainer = document.getElementById('dialog-container');
     const dialogOverlay = document.getElementById('dialog-overlay');
     dialogTitle.innerText = card;
-    dialogInput.value = '';
+    dialogInput.value = dictionary[card] || '';
     dialogContainer.style.display = 'block';
     dialogOverlay.style.display = 'block';
     
@@ -212,6 +186,39 @@ var previousKnowList = [...knowList];
   }
 
 }
+function createChip(card, column, colNo) {
+  tooltip = document.getElementById('tooltip');
+  tooltip.style.display = 'none';
+  const chip = document.createElement('div');
+  chip.addEventListener('click', () => openDialog(card));
+  chip.setAttribute('id', card.concat('-', colNo));
+  chip.classList.add('card');
+  chip.addEventListener('mouseover', ()=>showTooltip(chip));
+  chip.addEventListener('mouseout', ()=>hideTooltip());
+  chip.setAttribute('draggable', true);
+  chip.textContent = card;
+  const close = document.createElement('span');
+  close.classList.add('close');
+  close.addEventListener('click', (event) => removeChip(event));
+  chip.appendChild(close);
+  chip.addEventListener('dragstart', dragStart);
+  column.appendChild(chip);
+}
+//=====================================//
+function showTooltip(chip) {
+  // Get the button position and dimensions
+  var buttonRect = chip.getBoundingClientRect();
+  tooltip.textContent = dictionary[chip.innerText.split('>')[0]] || '';
+  var buttonRect2 = chip.parentElement.getBoundingClientRect();
+  tooltip.style.top = `${visualViewport.pageTop + buttonRect.top  - tooltip.offsetHeight}px`;
+  tooltip.style.left = `${buttonRect.left - tooltip.offsetWidth/2 + buttonRect.width}px`;
+  tooltip.style.display = 'block';
+}
+
+function hideTooltip() {
+  tooltip.style.display = 'none';
+}
+//=====================================//
 function saveState() {
   previousLearningList = [...learningList];
   previousNewList = [...newList];
