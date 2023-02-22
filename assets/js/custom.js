@@ -159,7 +159,7 @@ function initLocalStorage() {
         console.log('Remove Words exists');
     } else {
         console.log('Remove Words Dont is not found');
-        localStorage.setItem('RemoveWords', '')
+        localStorage.setItem('RemoveWords', '[]')
     }
     check = localStorage.getItem('NewWords');
 
@@ -204,7 +204,7 @@ fr.onload = function () {
     console.log("Setting Remove words: \n" + wordArray);
     words = wordArray.join(' ');
     //setting values to local storage 
-    localStorage.setItem('RemoveWords', removeWordList);
+    localStorage.setItem('RemoveWords', JSON.stringify(removeWordList));
     newWordList = newWordList.concat(newWordsInThisList).sort();
     //setting values to local storage 
     localStorage.setItem('NewWords', newWordList);
@@ -218,7 +218,7 @@ function findWords(file) {
 
 
     // Rtreiveing remove words from local storage
-    removeWordList = localStorage.getItem('RemoveWords').toUpperCase().split(',');
+    removeWordList = JSON.parse(localStorage.getItem('RemoveWords').toUpperCase());
     newWordList = localStorage.getItem('NewWords').toUpperCase().split(',');
 
 
